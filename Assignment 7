@@ -1,0 +1,353 @@
+
+1. Write a js program to find the maximum between two numbers.
+
+function findMaximum(num1, num2) {
+    if (num1 > num2) {
+        return num1;
+    } else {
+        return num2;
+    }
+}
+const number1 = 10;
+const number2 = 20;
+const maxNumber = findMaximum(number1, number2);
+console.log(`The maximum between ${number1} and ${number2} is ${maxNumber}`);
+
+2. Write a js program to find the maximum between three numbers.
+
+function findMaximum(num1, num2, num3) {
+    if (num1 >= num2 && num1 >= num3) {
+        return num1;
+    } else if (num2 >= num1 && num2 >= num3) {
+        return num2;
+    } else {
+        return num3;
+    }
+}
+
+const number1 = 10;
+const number2 = 20;
+const number3 = 15;
+const maxNumber = findMaximum(number1, number2, number3);
+console.log(`The maximum between ${number1}, ${number2}, and ${number3} is ${maxNumber}`);
+
+3. Write a js program to check whether a number is negative, positive or
+zero.
+
+function checkNumber(number) {
+    if (number > 0) {
+        return 'Positive';
+    } else if (number < 0) {
+        return 'Negative';
+    } else {
+        return 'Zero';
+    }
+}
+
+const num1 = 10;
+const num2 = -5;
+const num3 = 0;
+
+console.log(`${num1} is ${checkNumber(num1)}`);
+console.log(`${num2} is ${checkNumber(num2)}`);
+console.log(`${num3} is ${checkNumber(num3)}`);
+
+4. Write a js program to check whether a number is divisible by 5 and 11 or
+not.
+
+function checkDivisibility(number) {
+    if (number % 5 === 0 && number % 11 === 0) {
+        return `${number} is divisible by both 5 and 11`;
+    } else {
+        return `${number} is not divisible by both 5 and 11`;
+    }
+}
+
+const num1 = 55;
+const num2 = 25;
+const num3 = 33;
+
+console.log(checkDivisibility(num1));
+console.log(checkDivisibility(num2));
+console.log(checkDivisibility(num3));
+
+5. Write a js program to check whether a number is even or odd.
+
+function checkEvenOrOdd(number) {
+    if (number % 2 === 0) {
+        return `${number} is even`;
+    } else {
+        return `${number} is odd`;
+    }
+}
+
+const num1 = 10;
+const num2 = 15;
+const num3 = 0;
+
+console.log(checkEvenOrOdd(num1));
+console.log(checkEvenOrOdd(num2));
+console.log(checkEvenOrOdd(num3));
+
+6. Write a js program to check whether a year is leap year or not.
+
+function checkLeapYear(year) {
+    if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+        return `${year} is a leap year`;
+    } else {
+        return `${year} is not a leap year`;
+    }
+}
+
+const year1 = 2020;
+const year2 = 1900;
+const year3 = 2000;
+
+console.log(checkLeapYear(year1));
+console.log(checkLeapYear(year2));
+console.log(checkLeapYear(year3));
+
+7. Write a js program to input any alphabet and check whether it is vowel or
+consonant.
+
+function checkVowelOrConsonant(alphabet) {
+    // Convert the input to lowercase for case-insensitive comparison
+    alphabet = alphabet.toLowerCase();
+
+    // Check if the input is a single character alphabet
+    if (alphabet.length === 1 && /[a-z]/.test(alphabet)) {
+        // Check if the input is a vowel
+        if (['a', 'e', 'i', 'o', 'u'].includes(alphabet)) {
+            return `${alphabet} is a vowel`;
+        } else {
+            return `${alphabet} is a consonant`;
+        }
+    } else {
+        return 'Invalid input: Please enter a single alphabet character';
+    }
+}
+
+const input1 = 'A';
+const input2 = 'b';
+const input3 = '7'; // Invalid input
+
+console.log(checkVowelOrConsonant(input1));
+console.log(checkVowelOrConsonant(input2));
+console.log(checkVowelOrConsonant(input3));
+
+8. Write a js program to check whether a character is uppercase or
+lowercase alphabet.
+
+function checkUppercaseOrLowercase(char) {
+    // Check if the input is a single character alphabet
+    if (char.length === 1 && /[a-zA-Z]/.test(char)) {
+        // Check if the input is uppercase
+        if (char === char.toUpperCase()) {
+            return `${char} is an uppercase alphabet`;
+        } else {
+            return `${char} is a lowercase alphabet`;
+        }
+    } else {
+        return 'Invalid input: Please enter a single alphabet character';
+    }
+}
+
+const char1 = 'A';
+const char2 = 'b';
+const char3 = '7'; // Invalid input
+
+console.log(checkUppercaseOrLowercase(char1));
+console.log(checkUppercaseOrLowercase(char2));
+console.log(checkUppercaseOrLowercase(char3));
+
+9. Write a js program to input the week number and print weekday.
+
+function getWeekday(weekNumber) {
+    // Define an array of weekdays starting from Sunday
+    const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+    // Check if the input week number is valid
+    if (weekNumber >= 1 && weekNumber <= 7) {
+        return `Weekday for week number ${weekNumber} is ${weekdays[weekNumber - 1]}`;
+    } else {
+        return 'Invalid week number: Please enter a number between 1 and 7';
+    }
+}
+
+const week1 = 1;
+const week2 = 5;
+const week3 = 9;
+
+console.log(getWeekday(week1));
+console.log(getWeekday(week2));
+console.log(getWeekday(week3));
+
+10. Write a js program to input the month number and print the number of
+days in that month.
+
+function getDaysInMonth(monthNumber) {
+    // Define an array of days in each month (considering non-leap years)
+    const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+    // Check if the input month number is valid
+    if (monthNumber >= 1 && monthNumber <= 12) {
+        return `Number of days in month ${monthNumber} is ${daysInMonth[monthNumber - 1]}`;
+    } else {
+        return 'Invalid month number: Please enter a number between 1 and 12';
+    }
+}
+
+
+const month1 = 1; // January
+const month2 = 6; // June
+const month3 = 13; // Invalid month number
+
+console.log(getDaysInMonth(month1));
+console.log(getDaysInMonth(month2));
+console.log(getDaysInMonth(month3));
+
+11. Write a js program to count a minimum number of notes in a given
+amount.
+
+function countNotes(amount) {
+    // Define an array of available note denominations
+    const notes = [2000, 500, 200, 100, 50, 20, 10, 5, 1];
+
+    // Initialize a counter for each note denomination
+    let noteCounts = {};
+
+    // Iterate through each note denomination
+    for (let note of notes) {
+        // Count the number of notes of each denomination required
+        let count = Math.floor(amount / note);
+        if (count > 0) {
+            noteCounts[note] = count;
+            amount -= count * note;
+        }
+    }
+
+    return noteCounts;
+}
+
+const amount1 = 2500;
+const amount2 = 736;
+const amount3 = 10;
+
+console.log(countNotes(amount1));
+console.log(countNotes(amount2));
+console.log(countNotes(amount3));
+
+12. Write a js program to input marks of five subjects Physics, Chemistry,
+Biology, Mathematics, and Computer. Calculate percentage and grade
+according to the following:
+Percentage >= 90% : Grade A
+Percentage >= 80% : Grade B
+Percentage >= 70% : Grade C
+Percentage >= 60% : Grade D
+Percentage >= 40% : Grade E
+Percentage < 40% : Grade F
+
+function calculateGrade(physics, chemistry, biology, mathematics, computer) {
+    // Calculate total marks and percentage
+    const totalMarks = physics + chemistry + biology + mathematics + computer;
+    const percentage = (totalMarks / 500) * 100;
+
+    // Determine grade based on percentage
+    let grade;
+    if (percentage >= 90) {
+        grade = 'A';
+    } else if (percentage >= 80) {
+        grade = 'B';
+    } else if (percentage >= 70) {
+        grade = 'C';
+    } else if (percentage >= 60) {
+        grade = 'D';
+    } else if (percentage >= 40) {
+        grade = 'E';
+    } else {
+        grade = 'F';
+    }
+
+    return {
+        totalMarks: totalMarks,
+        percentage: percentage,
+        grade: grade
+    };
+}
+
+const physicsMarks = 85;
+const chemistryMarks = 78;
+const biologyMarks = 92;
+const mathematicsMarks = 88;
+const computerMarks = 80;
+
+const result = calculateGrade(physicsMarks, chemistryMarks, biologyMarks, mathematicsMarks, computerMarks);
+console.log(result);
+
+13. Write a js program to input the basic salary of an employee and calculate
+its Gross salary according to the following:
+Basic Salary <= 10000 : HRA = 20%, DA = 80%
+Basic Salary <= 20000 : HRA = 25%, DA = 90%
+Basic Salary > 20000 : HRA = 30%, DA = 95%
+
+function calculateGrossSalary(basicSalary) {
+    let hra, da;
+    
+    if (basicSalary <= 10000) {
+        hra = 0.2 * basicSalary;
+        da = 0.8 * basicSalary;
+    } else if (basicSalary <= 20000) {
+        hra = 0.25 * basicSalary;
+        da = 0.9 * basicSalary;
+    } else {
+        hra = 0.3 * basicSalary;
+        da = 0.95 * basicSalary;
+    }
+
+    const grossSalary = basicSalary + hra + da;
+    return grossSalary;
+}
+
+const basicSalary1 = 8000;
+const basicSalary2 = 15000;
+const basicSalary3 = 25000;
+
+console.log("Gross Salary 1:", calculateGrossSalary(basicSalary1));
+console.log("Gross Salary 2:", calculateGrossSalary(basicSalary2));
+console.log("Gross Salary 3:", calculateGrossSalary(basicSalary3));
+
+14. Write a js program to input electricity unit charges and calculate total
+electricity bill according to the given condition:
+For the first 50 units Rs. 0.50/unit
+For the next 100 units Rs. 0.75/unit
+For the next 100 units Rs. 1.20/unit
+For units above 250 Rs. 1.50/unit
+An additional surcharge of 20% is added to the bill
+
+function calculateElectricityBill(units) {
+    let bill = 0;
+
+    if (units <= 50) {
+        bill = units * 0.5;
+    } else if (units <= 150) {
+        bill = 50 * 0.5 + (units - 50) * 0.75;
+    } else if (units <= 250) {
+        bill = 50 * 0.5 + 100 * 0.75 + (units - 150) * 1.20;
+    } else {
+        bill = 50 * 0.5 + 100 * 0.75 + 100 * 1.20 + (units - 250) * 1.50;
+    }
+
+    // Add 20% surcharge to the bill
+    const surcharge = bill * 0.2;
+    bill += surcharge;
+
+    return bill;
+}
+
+const units1 = 30;
+const units2 = 120;
+const units3 = 300;
+
+console.log("Electricity Bill 1:", calculateElectricityBill(units1));
+console.log("Electricity Bill 2:", calculateElectricityBill(units2));
+console.log("Electricity Bill 3:", calculateElectricityBill(units3));
